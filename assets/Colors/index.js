@@ -9,4 +9,7 @@ export default {
     price: '#ffb813',
     gray: '#FAFAFA',
     BLUE: '#536dfe',
+    mainColor: "#0094CB",
+    prussian_blue: "#007CAA",
+    pink_swan: "#B4B4B4"
 }
