@@ -8,7 +8,7 @@ const {
 const Actions = createrAction({
   actionName: 'UserAction',
   actionListApi: [
-  
+
   ],
 });
 
@@ -23,6 +23,5 @@ const Actions = createrAction({
 // };
 
 export default {
-  login,
 
 };

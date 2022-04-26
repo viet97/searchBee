@@ -10,7 +10,7 @@ import { RootSiblingParent, setSiblingWrapper } from 'react-native-root-siblings
 import OrientationModule from '../modules/OrientationModule';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import Colors from '../../assets/Colors';
-import CustomText from '../components/common/Text';
+import AppNavigator from '../navigation/AppNavigation';
 
 const { store } = ConfigStore();
 LogBox.ignoreAllLogs();
@@ -61,7 +61,7 @@ class AppContainer extends React.Component {
                   translucent={true}
                   backgroundColor={Colors.STATUS_BAR_COLOR}
                 />
-                <CustomText>12312312312</CustomText>
+                <AppNavigator />
                 <Loading />
               </Provider>
             </SafeAreaProvider>

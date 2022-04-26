@@ -85,7 +85,6 @@ export default class BaseScreen extends BaseComponent {
   }
 
   renderNetworkError = () => {
-    const { TouchablePlatform } = require('../../modules/TouchablePlatform');
     return (
       <ScrollView
         keyboardShouldPersistTaps={'handled'}
@@ -102,16 +101,6 @@ export default class BaseScreen extends BaseComponent {
           backgroundColor: Colors.backgroundScreenColor,
         }}
       >
-        {/* <LottieView
-          style={{
-            width: 200,
-            height: 200,
-          }}
-          autoPlay
-          loop={false}
-          intervalReplaySecond={LOTTIE_INTERVAL_REPLAY}
-          source={Lotties.internet_error}
-        /> */}
         <Text bold size={25}>
           Oops...
         </Text>
@@ -128,21 +117,6 @@ export default class BaseScreen extends BaseComponent {
           refresh this page. If you are still experiencing issues, please
           contact us at
         </Text>
-        {
-          !this.isTab() && !this.isSplash() ?
-            <TouchablePlatform
-              style={{
-                marginTop: 32,
-              }}
-              onPress={() => {
-                NavigationService.getInstance().goBack();
-              }}
-            >
-              <Text style={{ color: Colors.white }} bold>
-                {'< Back'}
-              </Text>
-            </TouchablePlatform> : null
-        }
 
       </ScrollView>
     );

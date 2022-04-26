@@ -9,6 +9,7 @@ import ImageViewer from 'react-native-image-zoom-viewer';
 import { getStatusBarHeight } from '../../../utils/DeviceUtil';
 import { Text } from '..';
 import Colors from '../../../../assets/Colors';
+import SBButton from '../SBButton';
 
 export const TYPE_LEVEL_IMAGE = {
   LOW: FastImage.priority.low,
@@ -130,7 +131,7 @@ class CustomImage extends BaseCommon {
       ...otherProps
     } = this.props;
     let sourceDefault = '';
-    let Wrapper = usePreview ? Pressable : View;
+    let Wrapper = usePreview ? SBButton : View;
     if (!useFastImage || !source.uri || source.uri.indexOf('http') === -1) {
       if (useBackground) {
         return (

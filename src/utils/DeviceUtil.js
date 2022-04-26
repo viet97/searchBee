@@ -191,9 +191,9 @@ export const iosDevicesInch = {
 export const enableStatusBar = (isEnable) => StatusBar.setHidden(!isEnable);
 
 export const HOME_INDICATOR_HEIGHT = 14;
-export const iconTabSize = 20;
+export const iconTabSize = 30;
 
-export const TABBAR_HEIGHT = 60;
+export const TABBAR_HEIGHT = 70;
 
 export const STATUS_BAR_HEIGHT = !IS_ANDROID
   ? hasHomeIndicator()

@@ -8,7 +8,7 @@ import NavigationService from '../navigation/NavigationService';
 import { ROUTER_NAME } from '../navigation/NavigationConst';
 import { NetworkModule } from '../modules/NetworkStateModule';
 
-const { debug } = require('./config/env')
+const { debug } = require('../config/env')
 
 const myLog = (...args) => {
   if (debug) {

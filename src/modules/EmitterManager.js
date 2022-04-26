@@ -1,7 +1,10 @@
 import Emitter from './Emitter';
 
 const LIST_EVENT = {
-  APP_STATE_CHANGE: "APP_STATE_CHANGE"
+  APP_STATE_CHANGE: "APP_STATE_CHANGE",
+  CHANGE_SCREEN: "CHANGE_SCREEN",
+  NETWORK_CHANGE: 'network_change',
+  SIGN_IN_OUT: 'SIGN_IN_OUT',
 };
 
 export class EmitterManager {
