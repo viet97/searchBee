@@ -22,6 +22,7 @@ class CustomText extends BaseCommon {
       ...otherProps
     } = this.props;
     const staticStyle = {};
+    staticStyle.color = Colors.white
     if (color) {
       staticStyle.color = color;
     }

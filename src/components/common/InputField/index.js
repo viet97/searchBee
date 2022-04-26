@@ -1,7 +1,6 @@
 import { isNaN, trim } from 'lodash';
 import React, { createRef } from 'react';
 import { StyleSheet, View, TextInput } from 'react-native';
-import { TextInput } from 'react-native';
 
 import BaseCommon from '../BaseCommon';
 import Colors from '../../../../assets/Colors';
@@ -25,14 +24,8 @@ export default class InputField extends BaseCommon {
 
   onChangeText = (str) => {
     const { onChange } = this.props;
-    let finalStr = str;
-    if (this.isNumberType()) {
-      if (isNaN(Number(trim(str)))) {
-        finalStr = '0';
-      }
-    }
-    this._debugLog('onChangeText', finalStr);
-    onChange && onChange(finalStr);
+    this.setStateSafe({ str })
+    onChange && onChange(str);
   };
 
   onFocus = () => {
@@ -53,27 +46,30 @@ export default class InputField extends BaseCommon {
       containerStyle,
       style,
       text,
-      value,
       bold,
-      secureTextEntry,
+      Icon,
       ...otherProps
     } = this.props;
     const { str } = this.state;
     // const fontFamily = bold ? 'Manrope-ExtraBold' : 'Manrope-Medium';
     return (
-      <View style={containerStyle}>
+      <View style={[styles.container, {
+        paddingLeft: Icon ? 20 : 0
+      }, containerStyle]}>
+        {Icon ? <Icon width={24} height={24} /> : null}
         <TextInput
+          ref={this.inputRef}
           onBlur={this.onBlur}
           onFocus={this.onFocus}
-          style={[styles.staticStyle, style, { fontFamily }]}
+          style={[styles.staticStyle, {
+            paddingLeft: 10
+          }, style]}
           onChangeText={this.onChangeText}
           underlineColorAndroid="transparent"
           allowFontScaling={false}
-          secureTextEntry={secureTextEntry}
+          placeholderTextColor={Colors.prussian_blue}
           {...otherProps}
-          ref={this.inputRef}
           value={str}
-          placeholderTextColor={Colors.placeholder_input}
         />
       </View>
     );
@@ -85,6 +81,17 @@ const styles = StyleSheet.create({
     marginLeft: 12,
   },
   staticStyle: {
-    paddingVertical: 8,
+    flex: 1,
+    paddingLeft: 10,
+    fontSize: 12,
+    color: Colors.prussian_blue
   },
+  container: {
+    height: 60,
+    flexDirection: 'row',
+    backgroundColor: Colors.white,
+    borderRadius: 10,
+    overflow: 'hidden',
+    alignItems: 'center'
+  }
 });

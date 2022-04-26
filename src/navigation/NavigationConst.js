@@ -1,18 +1,23 @@
-import React from 'react';
 import HomeScreen from '../components/screen/HomeScreen';
+import LoginScreen from '../components/screen/LoginScreen';
+import SplashScreen from '../components/screen/SplashScreen';
 import { AppTab } from './router/TabNavigator';
 
 export const ROUTER_NAME = {
   SPLASH: {
-    name: 'SplashScreen',
-    component: HomeScreen,
+    name: 'splash',
+    component: SplashScreen,
+  },
+  LOGIN_SCREEN: {
+    name: 'login',
+    component: LoginScreen,
   },
   HOME: {
-    name: 'Home',
+    name: 'home',
     component: HomeScreen,
   },
   APP_TAB: {
-    name: 'AppTab',
+    name: 'tab',
     component: AppTab,
   },
 };
