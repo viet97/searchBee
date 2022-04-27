@@ -20,6 +20,10 @@ class LoginScreen extends BaseScreen {
     super(props);
   }
 
+  signIn = () => {
+    NavigationService.getInstance().reset({ routerName: ROUTER_NAME.APP_TAB.name })
+  }
+
   renderContent() {
     return (
       <View style={styles.container}>
@@ -79,6 +83,7 @@ class LoginScreen extends BaseScreen {
                     alignItems: 'center'
                   }}>
                   <SBButton
+                    onPress={this.signIn}
                     hitSlop={8}
                     style={styles.signin}>
                     <CustomText
