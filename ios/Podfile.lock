@@ -372,6 +372,8 @@ PODS:
     - React-perflogger (= 0.68.1)
   - ReactNativeART (1.2.0):
     - React
+  - ReactNativeLocalization (2.3.1):
+    - React-Core
   - rn-fetch-blob (0.12.0):
     - React-Core
   - RNCAsyncStorage (1.17.3):
@@ -508,6 +510,7 @@ DEPENDENCIES:
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "ReactNativeART (from `../node_modules/@react-native-community/art`)"
+  - ReactNativeLocalization (from `../node_modules/react-native-localization`)
   - rn-fetch-blob (from `../node_modules/rn-fetch-blob`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - "RNCPushNotificationIOS (from `../node_modules/@react-native-community/push-notification-ios`)"
@@ -619,6 +622,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   ReactNativeART:
     :path: "../node_modules/@react-native-community/art"
+  ReactNativeLocalization:
+    :path: "../node_modules/react-native-localization"
   rn-fetch-blob:
     :path: "../node_modules/rn-fetch-blob"
   RNCAsyncStorage:
@@ -701,6 +706,7 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: 7285b499d0339104b2813a1f58ad1ada4adbd6c0
   ReactCommon: bf2888a826ceedf54b99ad1b6182d1bc4a8a3984
   ReactNativeART: 78edc68dd4a1e675338cd0cd113319cf3a65f2ab
+  ReactNativeLocalization: 076497d7ca70341c751cd3b3e7c86187332a182d
   rn-fetch-blob: f065bb7ab7fb48dd002629f8bdcb0336602d3cba
   RNCAsyncStorage: 005c0e2f09575360f142d0d1f1f15e4ec575b1af
   RNCPushNotificationIOS: 87b8d16d3ede4532745e05b03c42cff33a36cc45

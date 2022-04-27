@@ -10,7 +10,10 @@ import InputField from '../../common/InputField';
 import SVGIcon from '../../../../assets/SVGIcon';
 import { insets } from '../../../utils/DeviceUtil';
 import { FontKey } from '../../../../assets/fonts/FontKey';
-import Header from '../../element/Header';
+import Header, { HEADER_HEIGHT } from '../../element/Header';
+import { translation } from '../../../translation';
+import KeyboardScrollView from '../../element/KeyboardScrollView';
+import SBButton from '../../common/SBButton';
 
 class SignupScreen extends BaseScreen {
   constructor(props) {
@@ -21,34 +24,79 @@ class SignupScreen extends BaseScreen {
     return (
       <View style={styles.container}>
         {this.renderUnderLogo()}
-        <Header />
 
-        <View
-          style={styles.contentContainer}>
-          <CustomText
-            font={FontKey.bold}
-            size={24}
-            style={styles.welcome}>
-            Don't Have an Account
-          </CustomText>
-          <CustomText
-            size={16}
-            style={styles.title}>
-            Fills All The Fields Correctly
-          </CustomText>
-          <InputField
-            containerStyle={styles.username}
-            placeholder={"insert email or mobile number"}
-            Icon={SVGIcon.username}
-          />
-          <InputField
-            containerStyle={styles.password}
-            placeholder={"insert password here"}
-            Icon={SVGIcon.password}
-            secureTextEntry
-          />
-        </View>
-      </View >
+        <KeyboardScrollView
+          style={{ flex: 1 }}>
+          <View
+            style={styles.contentContainer}>
+            <CustomText
+              font={FontKey.bold}
+              size={24}
+              style={styles.welcome}>
+              {translation.dontHaveAnAccount}
+            </CustomText>
+            <CustomText
+              size={16}
+              style={styles.title}>
+              {translation.fillAllFields}
+            </CustomText>
+            <InputField
+              containerStyle={styles.field}
+              placeholder={translation.insetEmail}
+              Icon={SVGIcon.mail}
+            />
+            <InputField
+              containerStyle={styles.field}
+              placeholder={translation.insertMobile}
+              Icon={SVGIcon.phone}
+            />
+            <InputField
+              containerStyle={styles.field}
+              placeholder={translation.insertFullName}
+              Icon={SVGIcon.username}
+            />
+            <InputField
+              containerStyle={styles.field}
+              placeholder={translation.insertLocation}
+              Icon={SVGIcon.location}
+            />
+            <InputField
+              containerStyle={styles.field}
+              placeholder={translation.insertPassword}
+              Icon={SVGIcon.password}
+            />
+            <InputField
+              containerStyle={styles.field}
+              placeholder={translation.insertConfirmationPassword}
+              Icon={SVGIcon.password}
+            />
+          </View>
+          <SBButton
+            style={{
+              height: 60,
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: Colors.prussian_blue,
+              marginHorizontal: 30,
+              marginBottom: 60,
+              borderRadius: 10,
+              marginTop: 52
+            }}>
+            <CustomText
+              size={14}
+              font={FontKey.bold}
+              style={{
+                lineHeight: 21
+              }}>
+              {translation.signup}
+            </CustomText>
+          </SBButton>
+        </KeyboardScrollView>
+        <Header
+          containerStyle={{
+            position: 'absolute'
+          }} />
+      </View>
     );
   }
 }
@@ -97,10 +145,7 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
     marginTop: 10
   },
-  password: {
-    marginTop: 30
-  },
-  username: {
+  field: {
     marginTop: 30
   },
   title: {
@@ -114,7 +159,7 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingHorizontal: 30,
     alignItems: 'center',
-    marginTop: 30,
+    marginTop: 30 + HEADER_HEIGHT + insets.top,
     flex: 1
   },
   container: {

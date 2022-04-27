@@ -1,0 +1,18 @@
+{
+  "welcome": "welcome to Search Bee",
+  "welcomeDes": "Insert Email and Password",
+  "forgotPassword": "Forgot Password?",
+  "signin": "Sign in",
+  "orLoginWith": "or login with",
+  "usernamePlaceholder": "insert email or mobile number",
+  "passwordPlaceholder": "insert password here",
+  "dontHaveAnAccount": "Don’t Have an Account",
+  "signup": "Sign Up",
+  "fillAllFields": "Fills All The Fields Correctly",
+  "insetEmail": "insert email here",
+  "insertMobile": "insert mobile number here",
+  "insertFullName": "insert full name here",
+  "insertLocation": "insert location here",
+  "insertPassword": "insert password here",
+  "insertConfirmationPassword": "confirmation password (must be the same)"
+}

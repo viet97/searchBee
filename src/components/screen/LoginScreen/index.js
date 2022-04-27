@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, TouchableWithoutFeedback, Keyboard, KeyboardAvoidingView } from 'react-native';
 
 import { connect } from 'react-redux';
 
@@ -13,6 +13,7 @@ import { insets } from '../../../utils/DeviceUtil';
 import { FontKey } from '../../../../assets/fonts/FontKey';
 import NavigationService from '../../../navigation/NavigationService';
 import { ROUTER_NAME } from '../../../navigation/NavigationConst';
+import { translation } from '../../../translation';
 
 class LoginScreen extends BaseScreen {
   constructor(props) {
@@ -23,96 +24,103 @@ class LoginScreen extends BaseScreen {
     return (
       <View style={styles.container}>
         {this.renderUnderLogo()}
-        <View
-          style={styles.contentContainer}>
-          <CustomText
-            font={FontKey.bold}
-            size={24}
-            style={styles.welcome}>
-            welcome to Search Bee
-          </CustomText>
-          <CustomText
-            size={16}
-            style={styles.title}>
-            Insert Email and Password
-          </CustomText>
-
-          <InputField
-            containerStyle={styles.username}
-            placeholder={"insert email or mobile number"}
-            Icon={SVGIcon.username}
-          />
-          <InputField
-            containerStyle={styles.password}
-            placeholder={"insert password here"}
-            Icon={SVGIcon.password}
-            secureTextEntry
-          />
-          <SBButton
-            hitSlop={8}
-            style={styles.forgotPassword}>
-            <CustomText
-              font={FontKey.bold}
-              size={12}
-              style={{
-                lineHeight: 18,
-              }}>
-              Forgot Password?
-            </CustomText>
-          </SBButton>
-
-          <SBButton
-            hitSlop={8}
-            style={styles.signin}>
-            <CustomText
-              font={FontKey.bold}
-              size={14}
-              style={{
-                lineHeight: 21,
-              }}>
-              Sign In
-            </CustomText>
-          </SBButton>
-          <CustomText
-            size={11}
-            style={styles.loginWith}>
-            or login with
-          </CustomText>
-          <View
-            style={styles.socialLoginRow}>
-            <SBButton
-              style={{
-                marginRight: 30
-              }}>
-              <SVGIcon.gmail
-                width={60}
-                height={60} />
-            </SBButton>
-            <SBButton>
-              <SVGIcon.fb
-                width={60}
-                height={60} />
-            </SBButton>
-          </View>
-          <View
-            style={styles.signupRow}>
-            <CustomText
-              size={14}
-              style={{
-                lineHeight: 21
-              }}>Don’t Have a Account?</CustomText>
-            <SBButton
-              onPress={() => NavigationService.getInstance().navigate({ routerName: ROUTER_NAME.SIGNUP.name })}
-              hitSlop={16}>
+        <KeyboardAvoidingView
+          style={{
+            flex: 1
+          }}>
+          <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+            <View
+              style={styles.contentContainer}>
               <CustomText
                 font={FontKey.bold}
-                size={14}
-                style={{
-                  lineHeight: 21
-                }}>{" "}Sign Up</CustomText>
-            </SBButton>
-          </View>
-        </View>
+                size={24}
+                style={styles.welcome}>
+                {translation.welcome}
+              </CustomText>
+              <CustomText
+                size={16}
+                style={styles.title}>
+                {translation.welcomeDes}
+              </CustomText>
+
+              <InputField
+                containerStyle={styles.username}
+                placeholder={translation.usernamePlaceholder}
+                Icon={SVGIcon.username}
+              />
+              <InputField
+                containerStyle={styles.password}
+                placeholder={translation.passwordPlaceholder}
+                Icon={SVGIcon.password}
+                secureTextEntry
+              />
+              <SBButton
+                hitSlop={8}
+                style={styles.forgotPassword}>
+                <CustomText
+                  font={FontKey.bold}
+                  size={12}
+                  style={{
+                    lineHeight: 18,
+                  }}>
+                  {translation.forgotPassword}
+                </CustomText>
+              </SBButton>
+
+              <SBButton
+                hitSlop={8}
+                style={styles.signin}>
+                <CustomText
+                  font={FontKey.bold}
+                  size={14}
+                  style={{
+                    lineHeight: 21,
+                  }}>
+                  {translation.signin}
+                </CustomText>
+              </SBButton>
+              <CustomText
+                size={11}
+                style={styles.loginWith}>
+                {translation.orLoginWith}
+              </CustomText>
+              <View
+                style={styles.socialLoginRow}>
+                <SBButton
+                  style={{
+                    marginRight: 30
+                  }}>
+                  <SVGIcon.gmail
+                    width={60}
+                    height={60} />
+                </SBButton>
+                <SBButton>
+                  <SVGIcon.fb
+                    width={60}
+                    height={60} />
+                </SBButton>
+              </View>
+              <View
+                style={styles.signupRow}>
+                <CustomText
+                  size={14}
+                  style={{
+                    lineHeight: 21
+                  }}>{`${translation.dontHaveAnAccount}?`}</CustomText>
+                <SBButton
+                  onPress={() => NavigationService.getInstance().navigate({ routerName: ROUTER_NAME.SIGNUP.name })}
+                  hitSlop={16}>
+                  <CustomText
+                    font={FontKey.bold}
+                    size={14}
+                    style={{
+                      lineHeight: 21
+                    }}>{` ${translation.signup}`}</CustomText>
+                </SBButton>
+              </View>
+            </View>
+          </TouchableWithoutFeedback>
+        </KeyboardAvoidingView>
       </View>
     );
   }
