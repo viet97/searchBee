@@ -1,5 +1,6 @@
 import HomeScreen from '../components/screen/HomeScreen';
 import LoginScreen from '../components/screen/LoginScreen';
+import SignupScreen from '../components/screen/SignupScreen';
 import SplashScreen from '../components/screen/SplashScreen';
 import { AppTab } from './router/TabNavigator';
 
@@ -11,6 +12,10 @@ export const ROUTER_NAME = {
   LOGIN_SCREEN: {
     name: 'login',
     component: LoginScreen,
+  },
+  SIGNUP: {
+    name: 'signup',
+    component: SignupScreen,
   },
   HOME: {
     name: 'home',

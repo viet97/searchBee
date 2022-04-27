@@ -9,6 +9,7 @@ import NavigationService from '../../navigation/NavigationService';
 import { NetworkModule } from '../../modules/NetworkStateModule';
 import { ERROR_CODE } from '../../connection/Connector';
 import Colors from '../../../assets/Colors';
+import SVGIcon from '../../../assets/SVGIcon';
 
 export default class BaseScreen extends BaseComponent {
   constructor(props) {
@@ -122,6 +123,18 @@ export default class BaseScreen extends BaseComponent {
     );
   };
 
+  renderUnderLogo = () => {
+    return (
+      <View
+        style={styles.underLogo}>
+        <SVGIcon.splash_logo
+          width={232}
+          height={280}
+        />
+      </View>
+    )
+  }
+
   render() {
     if (this.state?.isNotFoundError) {
       return this.renderNotFoundError();
@@ -142,3 +155,13 @@ export default class BaseScreen extends BaseComponent {
 }
 
 BaseScreen.prototype.shouldComponentUpdate = shouldComponentUpdate;
+
+
+const styles = StyleSheet.create({
+  underLogo: {
+    ...StyleSheet.absoluteFillObject,
+    opacity: 0.3,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+})

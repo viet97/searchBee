@@ -8,13 +8,11 @@ import Colors from '../../../../assets/Colors';
 import CustomText from '../../common/Text';
 import InputField from '../../common/InputField';
 import SVGIcon from '../../../../assets/SVGIcon';
-import SBButton from '../../common/SBButton';
 import { insets } from '../../../utils/DeviceUtil';
 import { FontKey } from '../../../../assets/fonts/FontKey';
-import NavigationService from '../../../navigation/NavigationService';
-import { ROUTER_NAME } from '../../../navigation/NavigationConst';
+import Header from '../../element/Header';
 
-class LoginScreen extends BaseScreen {
+class SignupScreen extends BaseScreen {
   constructor(props) {
     super(props);
   }
@@ -23,20 +21,21 @@ class LoginScreen extends BaseScreen {
     return (
       <View style={styles.container}>
         {this.renderUnderLogo()}
+        <Header />
+
         <View
           style={styles.contentContainer}>
           <CustomText
             font={FontKey.bold}
             size={24}
             style={styles.welcome}>
-            welcome to Search Bee
+            Don't Have an Account
           </CustomText>
           <CustomText
             size={16}
             style={styles.title}>
-            Insert Email and Password
+            Fills All The Fields Correctly
           </CustomText>
-
           <InputField
             containerStyle={styles.username}
             placeholder={"insert email or mobile number"}
@@ -48,72 +47,8 @@ class LoginScreen extends BaseScreen {
             Icon={SVGIcon.password}
             secureTextEntry
           />
-          <SBButton
-            hitSlop={8}
-            style={styles.forgotPassword}>
-            <CustomText
-              font={FontKey.bold}
-              size={12}
-              style={{
-                lineHeight: 18,
-              }}>
-              Forgot Password?
-            </CustomText>
-          </SBButton>
-
-          <SBButton
-            hitSlop={8}
-            style={styles.signin}>
-            <CustomText
-              font={FontKey.bold}
-              size={14}
-              style={{
-                lineHeight: 21,
-              }}>
-              Sign In
-            </CustomText>
-          </SBButton>
-          <CustomText
-            size={11}
-            style={styles.loginWith}>
-            or login with
-          </CustomText>
-          <View
-            style={styles.socialLoginRow}>
-            <SBButton
-              style={{
-                marginRight: 30
-              }}>
-              <SVGIcon.gmail
-                width={60}
-                height={60} />
-            </SBButton>
-            <SBButton>
-              <SVGIcon.fb
-                width={60}
-                height={60} />
-            </SBButton>
-          </View>
-          <View
-            style={styles.signupRow}>
-            <CustomText
-              size={14}
-              style={{
-                lineHeight: 21
-              }}>Don’t Have a Account?</CustomText>
-            <SBButton
-              onPress={() => NavigationService.getInstance().navigate({ routerName: ROUTER_NAME.SIGNUP.name })}
-              hitSlop={16}>
-              <CustomText
-                font={FontKey.bold}
-                size={14}
-                style={{
-                  lineHeight: 21
-                }}>{" "}Sign Up</CustomText>
-            </SBButton>
-          </View>
         </View>
-      </View>
+      </View >
     );
   }
 }
@@ -131,7 +66,7 @@ const mapDispatchToProps = (dispatch, getState) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(LoginScreen);
+)(SignupScreen);
 
 const styles = StyleSheet.create({
   signupRow: {
@@ -166,19 +101,20 @@ const styles = StyleSheet.create({
     marginTop: 30
   },
   username: {
-    marginTop: 60
+    marginTop: 30
   },
   title: {
     marginTop: 4,
     lineHeight: 24
   },
   welcome: {
-    marginTop: 60,
     lineHeight: 36,
+    marginTop: 4
   },
   contentContainer: {
     paddingHorizontal: 30,
     alignItems: 'center',
+    marginTop: 30,
     flex: 1
   },
   container: {
