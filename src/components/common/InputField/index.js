@@ -4,6 +4,7 @@ import { StyleSheet, View, TextInput } from 'react-native';
 
 import BaseCommon from '../BaseCommon';
 import Colors from '../../../../assets/Colors';
+import { FontKey } from '../../../../assets/fonts/FontKey';
 
 export default class InputField extends BaseCommon {
   static defaultProps = {
@@ -48,10 +49,11 @@ export default class InputField extends BaseCommon {
       text,
       bold,
       Icon,
+      font,
       ...otherProps
     } = this.props;
     const { str } = this.state;
-    // const fontFamily = bold ? 'Manrope-ExtraBold' : 'Manrope-Medium';
+    const fontFamily = font || FontKey.regular
     return (
       <View style={[styles.container, {
         paddingLeft: Icon ? 20 : 0
@@ -62,7 +64,8 @@ export default class InputField extends BaseCommon {
           onBlur={this.onBlur}
           onFocus={this.onFocus}
           style={[styles.staticStyle, {
-            paddingLeft: 10
+            paddingLeft: 10,
+            fontFamily
           }, style]}
           onChangeText={this.onChangeText}
           underlineColorAndroid="transparent"

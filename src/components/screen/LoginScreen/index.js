@@ -10,6 +10,7 @@ import InputField from '../../common/InputField';
 import SVGIcon from '../../../../assets/SVGIcon';
 import SBButton from '../../common/SBButton';
 import { insets } from '../../../utils/DeviceUtil';
+import { FontKey } from '../../../../assets/fonts/FontKey';
 
 class LoginScreen extends BaseScreen {
   constructor(props) {
@@ -29,7 +30,7 @@ class LoginScreen extends BaseScreen {
             />
           </View>
           <CustomText
-            bold
+            font={FontKey.bold}
             size={24}
             style={styles.welcome}>
             welcome to Search Bee
@@ -55,7 +56,7 @@ class LoginScreen extends BaseScreen {
             hitSlop={8}
             style={styles.forgotPassword}>
             <CustomText
-              bold
+              font={FontKey.bold}
               size={12}
               style={{
                 lineHeight: 18,
@@ -68,7 +69,7 @@ class LoginScreen extends BaseScreen {
             hitSlop={8}
             style={styles.signin}>
             <CustomText
-              bold
+              font={FontKey.bold}
               size={14}
               style={{
                 lineHeight: 21,
@@ -107,7 +108,7 @@ class LoginScreen extends BaseScreen {
             <SBButton
               hitSlop={16}>
               <CustomText
-                bold
+                font={FontKey.bold}
                 size={14}
                 style={{
                   lineHeight: 21
