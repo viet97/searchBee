@@ -24,7 +24,6 @@ class SignupScreen extends BaseScreen {
     return (
       <View style={styles.container}>
         {this.renderUnderLogo()}
-
         <KeyboardScrollView
           style={{ flex: 1 }}>
           <View
@@ -72,16 +71,7 @@ class SignupScreen extends BaseScreen {
             />
           </View>
           <SBButton
-            style={{
-              height: 60,
-              alignItems: 'center',
-              justifyContent: 'center',
-              backgroundColor: Colors.prussian_blue,
-              marginHorizontal: 30,
-              marginBottom: 60,
-              borderRadius: 10,
-              marginTop: 52
-            }}>
+            style={styles.signupButton}>
             <CustomText
               size={14}
               font={FontKey.bold}
@@ -117,33 +107,15 @@ export default connect(
 )(SignupScreen);
 
 const styles = StyleSheet.create({
-  signupRow: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'flex-end',
-    marginBottom: insets.bottom || 24
-  },
-  socialLoginRow: {
-    flexDirection: 'row',
-    marginTop: 16
-  },
-  loginWith: {
-    lineHeight: 17,
-    marginTop: 16
-  },
-  signin: {
-    marginTop: 10,
-    backgroundColor: Colors.prussian_blue,
-    width: '100%',
+  signupButton: {
     height: 60,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: Colors.prussian_blue,
+    marginHorizontal: 30,
+    marginBottom: 60,
     borderRadius: 10,
-    marginTop: 186
-  },
-  forgotPassword: {
-    alignSelf: 'flex-end',
-    marginTop: 10
+    marginTop: 52
   },
   field: {
     marginTop: 30

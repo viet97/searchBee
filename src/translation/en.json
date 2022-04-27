@@ -14,5 +14,8 @@
   "insertFullName": "insert full name here",
   "insertLocation": "insert location here",
   "insertPassword": "insert password here",
-  "insertConfirmationPassword": "confirmation password (must be the same)"
+  "insertConfirmationPassword": "confirmation password (must be the same)",
+  "resetPassword": "Reset Password",
+  "resetPasswordDes": "Please enter your email address to request a password Reset",
+  "rememberYourPassword": "Remember your password?"
 }

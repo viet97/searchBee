@@ -55,6 +55,7 @@ class LoginScreen extends BaseScreen {
                 secureTextEntry
               />
               <SBButton
+                onPress={() => NavigationService.getInstance().navigate({ routerName: ROUTER_NAME.RESET_PASSWORD })}
                 hitSlop={8}
                 style={styles.forgotPassword}>
                 <CustomText
