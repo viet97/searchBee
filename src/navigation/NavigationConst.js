@@ -1,6 +1,7 @@
 import HomeScreen from '../components/screen/HomeScreen';
 import LoginScreen from '../components/screen/LoginScreen';
 import ResetPassword from '../components/screen/ResetPassword';
+import ResetPasswordConfirmation from '../components/screen/ResetPasswordConfirmation';
 import SignupScreen from '../components/screen/SignupScreen';
 import SplashScreen from '../components/screen/SplashScreen';
 import { AppTab } from './router/TabNavigator';
@@ -21,6 +22,10 @@ export const ROUTER_NAME = {
   RESET_PASSWORD: {
     name: 'resetPassword',
     component: ResetPassword,
+  },
+  RESET_PASSWORD_CONFIRMATION: {
+    name: 'resetPasswordConfirmation',
+    component: ResetPasswordConfirmation,
   },
   HOME: {
     name: 'home',

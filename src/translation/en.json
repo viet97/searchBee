@@ -17,5 +17,8 @@
   "insertConfirmationPassword": "confirmation password (must be the same)",
   "resetPassword": "Reset Password",
   "resetPasswordDes": "Please enter your email address to request a password Reset",
-  "rememberYourPassword": "Remember your password?"
+  "rememberYourPassword": "Remember your password?",
+  "resetPasswordConfirmationDes": "Please enter your old, new, and confirmation password for Reset Password",
+  "insertOldPassword": "insert old password here",
+  "insertNewPassword": "insert new password here"
 }

@@ -8,7 +8,7 @@ import Colors from '../../../../assets/Colors';
 import CustomText from '../../common/Text';
 import InputField from '../../common/InputField';
 import SVGIcon from '../../../../assets/SVGIcon';
-import Header, { HEADER_HEIGHT } from '../../element/Header';
+import Header from '../../element/Header';
 import { translation } from '../../../translation';
 import { FontKey } from '../../../../assets/fonts/FontKey';
 import SBButton from '../../common/SBButton';
@@ -50,6 +50,7 @@ class ResetPassword extends BaseScreen {
                 Icon={SVGIcon.mail}
                 containerStyle={styles.inputContainer} />
               <SBButton
+                onPress={() => NavigationService.getInstance().navigate({ routerName: ROUTER_NAME.RESET_PASSWORD_CONFIRMATION.name })}
                 style={styles.resetButton}>
                 <CustomText
                   font={FontKey.bold}

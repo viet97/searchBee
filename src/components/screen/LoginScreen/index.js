@@ -67,39 +67,52 @@ class LoginScreen extends BaseScreen {
                   {translation.forgotPassword}
                 </CustomText>
               </SBButton>
-
-              <SBButton
-                hitSlop={8}
-                style={styles.signin}>
-                <CustomText
-                  font={FontKey.bold}
-                  size={14}
-                  style={{
-                    lineHeight: 21,
-                  }}>
-                  {translation.signin}
-                </CustomText>
-              </SBButton>
-              <CustomText
-                size={11}
-                style={styles.loginWith}>
-                {translation.orLoginWith}
-              </CustomText>
               <View
-                style={styles.socialLoginRow}>
-                <SBButton
+                style={{
+                  flex: 1,
+                  width: '100%',
+                }}>
+                <View
+                  style={{ flex: 2 }} />
+                <View
                   style={{
-                    marginRight: 30
+                    alignItems: 'center'
                   }}>
-                  <SVGIcon.gmail
-                    width={60}
-                    height={60} />
-                </SBButton>
-                <SBButton>
-                  <SVGIcon.fb
-                    width={60}
-                    height={60} />
-                </SBButton>
+                  <SBButton
+                    hitSlop={8}
+                    style={styles.signin}>
+                    <CustomText
+                      font={FontKey.bold}
+                      size={14}
+                      style={{
+                        lineHeight: 21,
+                      }}>
+                      {translation.signin}
+                    </CustomText>
+                  </SBButton>
+                  <CustomText
+                    size={11}
+                    style={styles.loginWith}>
+                    {translation.orLoginWith}
+                  </CustomText>
+                  <View
+                    style={styles.socialLoginRow}>
+                    <SBButton
+                      style={{
+                        marginRight: 30
+                      }}>
+                      <SVGIcon.gmail
+                        width={60}
+                        height={60} />
+                    </SBButton>
+                    <SBButton>
+                      <SVGIcon.fb
+                        width={60}
+                        height={60} />
+                    </SBButton>
+                  </View>
+                </View>
+                <View style={{ flex: 1 }} />
               </View>
               <View
                 style={styles.signupRow}>
@@ -144,9 +157,7 @@ export default connect(
 
 const styles = StyleSheet.create({
   signupRow: {
-    flex: 1,
     flexDirection: 'row',
-    alignItems: 'flex-end',
     marginBottom: insets.bottom || 24
   },
   socialLoginRow: {
@@ -165,7 +176,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 10,
-    marginTop: 186
   },
   forgotPassword: {
     alignSelf: 'flex-end',
@@ -182,7 +192,7 @@ const styles = StyleSheet.create({
     lineHeight: 24
   },
   welcome: {
-    marginTop: 60,
+    marginTop: 64,
     lineHeight: 36,
   },
   contentContainer: {
