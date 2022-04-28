@@ -20,5 +20,13 @@
   "rememberYourPassword": "Remember your password?",
   "resetPasswordConfirmationDes": "Please enter your old, new, and confirmation password for Reset Password",
   "insertOldPassword": "insert old password here",
-  "insertNewPassword": "insert new password here"
+  "insertNewPassword": "insert new password here",
+  "helloUser": "Hello {0} 👋",
+  "whatAreYouLookingFor": "What Are You Looking For",
+  "searchMedicinePlaceholder": "Search Medicine Healthcare Here...",
+  "broadcastWithPrescription": "Broadcast With Prescription",
+  "broadcastWithPrescriptionDes": "Upload the recipe here and tell us what you need we will be happy to help you, either from gallery or camera",
+  "broadcast": "Broadcast",
+  "categories": "Categories",
+  "next": "Next"
 }

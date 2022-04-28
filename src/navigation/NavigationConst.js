@@ -38,4 +38,6 @@ export const ROUTER_NAME = {
 };
 export const APP_TAB = {
   HOME: { ...ROUTER_NAME.HOME, name: 'Home_Tab' },
+  OFFER: { ...ROUTER_NAME.HOME, name: 'Offer_Tab' },
+  PROFILE: { ...ROUTER_NAME.HOME, name: 'Profile_Tab' },
 };

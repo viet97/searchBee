@@ -6,22 +6,15 @@ import { TABBAR_HEIGHT, iconTabSize } from '../../utils/DeviceUtil';
 import BaseElement from '../../components/element/BaseElement';
 import { APP_TAB } from '../NavigationConst';
 import SVGIcon from '../../../assets/SVGIcon';
-import StaticSafeAreaInsets from 'react-native-static-safe-area-insets';
 import Colors from '../../../assets/Colors';
 import SBButton from '../../components/common/SBButton';
 
-export const tabIconMarginTop = StaticSafeAreaInsets.safeAreaInsetsBottom === 0 ? 12 : 16;
 const Tab = createBottomTabNavigator();
 const styles = StyleSheet.create({
   contentStyle: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  iconStyle: {
-    marginTop: tabIconMarginTop,
-    width: iconTabSize,
-    height: iconTabSize,
   },
 });
 
@@ -37,6 +30,7 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
     shadowColor: Colors.black,
     shadowRadius: 20,
     shadowOpacity: 0.1,
+    alignItems: 'center',
   };
 
   return (
@@ -76,13 +70,11 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
               <IconFC
                 width={iconTabSize}
                 height={iconTabSize}
-                style={{ marginTop: tabIconMarginTop }}
               />
             ) : (
               <Icon
                 width={iconTabSize}
                 height={iconTabSize}
-                style={{ marginTop: tabIconMarginTop }}
               />
             )}
           </SBButton>
@@ -116,6 +108,22 @@ export class MainTab extends BaseElement {
             tabBarLabel: APP_TAB.HOME.title,
             Icon: SVGIcon.home,
             IconFC: SVGIcon.home_fc,
+          }}
+        />
+        <Tab.Screen
+          {...APP_TAB.OFFER}
+          options={{
+            tabBarLabel: APP_TAB.OFFER.title,
+            Icon: SVGIcon.offer,
+            IconFC: SVGIcon.offer_fc,
+          }}
+        />
+        <Tab.Screen
+          {...APP_TAB.PROFILE}
+          options={{
+            tabBarLabel: APP_TAB.PROFILE.title,
+            Icon: SVGIcon.profile,
+            IconFC: SVGIcon.profile_fc,
           }}
         />
       </Tab.Navigator>

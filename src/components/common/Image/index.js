@@ -7,7 +7,7 @@ import BaseCommon from '../BaseCommon';
 import { isArray } from 'lodash';
 import ImageViewer from 'react-native-image-zoom-viewer';
 import { getStatusBarHeight } from '../../../utils/DeviceUtil';
-import { Text } from '..';
+import { Text } from '../Text';
 import Colors from '../../../../assets/Colors';
 import SBButton from '../SBButton';
 
@@ -132,7 +132,7 @@ class CustomImage extends BaseCommon {
     } = this.props;
     let sourceDefault = '';
     let Wrapper = usePreview ? SBButton : View;
-    if (!useFastImage || !source.uri || source.uri.indexOf('http') === -1) {
+    if (!useFastImage || !source?.uri || source?.uri.indexOf('http') === -1) {
       if (useBackground) {
         return (
           <Wrapper
@@ -225,7 +225,6 @@ CustomImage.defaultProps = {
   usePreview: false,
   level: TYPE_LEVEL_IMAGE.NORMAL,
   resizeMode: TYPE_IMAGE_RESIZE_MODE.CONTAIN,
-  source: Images.assets.default.source,
   type: TYPE_IMAGE.VERTICAL,
 };
 

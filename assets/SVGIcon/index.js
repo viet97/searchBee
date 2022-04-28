@@ -22,6 +22,8 @@ import reset_password from './reset_password.svg';
 import search from './search.svg';
 import splash_logo from './splash_logo.svg';
 import username from './username.svg';
+import medicine_cover from './medicine_cover.svg';
+import medicine_overlay from './medicine_overlay.svg';
 
 export default {
   home,
@@ -47,5 +49,7 @@ export default {
   reset_password,
   search,
   splash_logo,
-  username
+  username,
+  medicine_cover,
+  medicine_overlay
 };

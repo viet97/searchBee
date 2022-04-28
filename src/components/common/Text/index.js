@@ -36,8 +36,8 @@ class CustomText extends BaseCommon {
         numberOfLines={numberOfLines}
         style={[
           styles.defaultText,
-          style,
           staticStyle,
+          style,
           isLineThrough
             ? {
               textDecorationLine: 'line-through',
