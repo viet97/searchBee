@@ -154,22 +154,6 @@ class HomeScreen extends BaseScreen {
             </View>)
           })}
         </ScrollView>
-        <View
-          style={styles.verticalCategories}>
-          {dumpData.map(category => {
-            return (
-              <View
-                style={styles.verticalCategoryContainer}>
-                <CustomText
-                  size={14}
-                  font={FontKey.bold}
-                  style={styles.verticalCategoryLabel}>
-                  {category}
-                </CustomText>
-              </View>
-            )
-          })}
-        </View>
       </View>
     )
   }
@@ -180,9 +164,7 @@ class HomeScreen extends BaseScreen {
         {this.renderUnderLogo()}
         <KeyboardScrollView
           style={{ flex: 1 }}
-          contentContainerStyle={{
-            paddingBottom: 80
-          }}>
+        >
           <View
             style={styles.contentContainer}
           >
@@ -217,20 +199,6 @@ const styles = StyleSheet.create({
   horizontalCategoryLabel: {
     lineHeight: 18,
     color: Colors.prussian_blue
-  },
-  verticalCategoryLabel: {
-    lineHeight: 21,
-    color: Colors.prussian_blue
-  },
-  verticalCategoryContainer: {
-    marginBottom: 20,
-    borderRadius: 4,
-    backgroundColor: Colors.placebo,
-    padding: 20
-  },
-  verticalCategories: {
-    marginHorizontal: 30,
-    marginTop: 30
   },
   listCategoriesHorizontal: {
     height: 40,

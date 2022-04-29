@@ -24,6 +24,8 @@ import splash_logo from './splash_logo.svg';
 import username from './username.svg';
 import medicine_cover from './medicine_cover.svg';
 import medicine_overlay from './medicine_overlay.svg';
+import edit_avatar from './edit_avatar.svg';
+import edit_address from './edit_address.svg';
 
 export default {
   home,
@@ -51,5 +53,7 @@ export default {
   splash_logo,
   username,
   medicine_cover,
-  medicine_overlay
+  medicine_overlay,
+  edit_avatar,
+  edit_address
 };

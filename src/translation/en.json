@@ -28,5 +28,7 @@
   "broadcastWithPrescriptionDes": "Upload the recipe here and tell us what you need we will be happy to help you, either from gallery or camera",
   "broadcast": "Broadcast",
   "categories": "Categories",
-  "next": "Next"
+  "next": "Next",
+  "editName": "Edit Name",
+  "address": "Address"
 }

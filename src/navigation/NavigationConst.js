@@ -1,5 +1,6 @@
 import HomeScreen from '../components/screen/HomeScreen';
 import LoginScreen from '../components/screen/LoginScreen';
+import ProfileScreen from '../components/screen/ProfileScreen';
 import ResetPassword from '../components/screen/ResetPassword';
 import ResetPasswordConfirmation from '../components/screen/ResetPasswordConfirmation';
 import SignupScreen from '../components/screen/SignupScreen';
@@ -31,6 +32,10 @@ export const ROUTER_NAME = {
     name: 'home',
     component: HomeScreen,
   },
+  PROFILE: {
+    name: 'profile',
+    component: ProfileScreen,
+  },
   APP_TAB: {
     name: 'tab',
     component: AppTab,
@@ -39,5 +44,5 @@ export const ROUTER_NAME = {
 export const APP_TAB = {
   HOME: { ...ROUTER_NAME.HOME, name: 'Home_Tab' },
   OFFER: { ...ROUTER_NAME.HOME, name: 'Offer_Tab' },
-  PROFILE: { ...ROUTER_NAME.HOME, name: 'Profile_Tab' },
+  PROFILE: { ...ROUTER_NAME.PROFILE, name: 'Profile_Tab' },
 };
