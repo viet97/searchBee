@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, ScrollView } from 'react-native';
 
 import { connect } from 'react-redux';
 
@@ -16,7 +16,12 @@ import { FontKey } from '../../../../assets/fonts/FontKey';
 import InputField from '../../common/InputField';
 import SBButton from '../../common/SBButton';
 
-
+const dumpData = [
+  "Homeopathy",
+  "Ayurvedic",
+  "Allospathy",
+  "Stomach",
+]
 class HomeScreen extends BaseScreen {
   constructor(props) {
     super(props);
@@ -116,18 +121,75 @@ class HomeScreen extends BaseScreen {
     </SBButton>)
   }
 
+  renderCategories = () => {
+    return (
+      <View
+        style={styles.categoriesContainer} >
+        <CustomText
+          size={14}
+          font={FontKey.bold}
+          style={styles.categoriesLabel}
+        >
+          {translation.categories}
+        </CustomText>
+        <ScrollView
+          showsHorizontalScrollIndicator={false}
+          style={{
+            marginTop: 10,
+          }}
+          contentContainerStyle={{
+            paddingHorizontal: 30
+          }}
+          horizontal>
+          {dumpData.map((category, index) => {
+            return (<View
+              style={[styles.listCategoriesHorizontal, {
+                marginRight: index < dumpData.length - 1 ? 10 : 0
+              }]}>
+              <CustomText
+                size={12}
+                style={styles.horizontalCategoryLabel}>
+                {category}
+              </CustomText>
+            </View>)
+          })}
+        </ScrollView>
+        <View
+          style={styles.verticalCategories}>
+          {dumpData.map(category => {
+            return (
+              <View
+                style={styles.verticalCategoryContainer}>
+                <CustomText
+                  size={14}
+                  font={FontKey.bold}
+                  style={styles.verticalCategoryLabel}>
+                  {category}
+                </CustomText>
+              </View>
+            )
+          })}
+        </View>
+      </View>
+    )
+  }
+
   renderContent() {
     return (
       <View style={styles.container}>
         {this.renderUnderLogo()}
         <KeyboardScrollView
-          style={{ flex: 1 }}>
+          style={{ flex: 1 }}
+          contentContainerStyle={{
+            paddingBottom: 80
+          }}>
           <View
             style={styles.contentContainer}
           >
             {this.renderHeader()}
             {this.renderSearch()}
             {this.renderBroadCast()}
+            {this.renderCategories()}
           </View>
         </KeyboardScrollView>
         {this.renderNext()}
@@ -152,6 +214,40 @@ export default connect(
 )(HomeScreen);
 
 const styles = StyleSheet.create({
+  horizontalCategoryLabel: {
+    lineHeight: 18,
+    color: Colors.prussian_blue
+  },
+  verticalCategoryLabel: {
+    lineHeight: 21,
+    color: Colors.prussian_blue
+  },
+  verticalCategoryContainer: {
+    marginBottom: 20,
+    borderRadius: 4,
+    backgroundColor: Colors.placebo,
+    padding: 20
+  },
+  verticalCategories: {
+    marginHorizontal: 30,
+    marginTop: 30
+  },
+  listCategoriesHorizontal: {
+    height: 40,
+    minWidth: 100,
+    paddingHorizontal: 8,
+    backgroundColor: Colors.placebo,
+    borderRadius: 4,
+    alignItems: "center",
+    justifyContent: 'center',
+  },
+  categoriesLabel: {
+    lineHeight: 21,
+    marginLeft: 30
+  },
+  categoriesContainer: {
+    marginTop: 30,
+  },
   next: {
     position: 'absolute',
     bottom: 30,
