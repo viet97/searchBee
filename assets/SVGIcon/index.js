@@ -26,6 +26,9 @@ import medicine_cover from './medicine_cover.svg';
 import medicine_overlay from './medicine_overlay.svg';
 import edit_avatar from './edit_avatar.svg';
 import edit_address from './edit_address.svg';
+import gallery from './gallery.svg';
+import camera from './camera.svg';
+import upload_prescription from './upload_prescription.svg';
 
 export default {
   home,
@@ -55,5 +58,8 @@ export default {
   medicine_cover,
   medicine_overlay,
   edit_avatar,
-  edit_address
+  edit_address,
+  gallery,
+  camera,
+  upload_prescription
 };

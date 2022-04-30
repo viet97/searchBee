@@ -33,5 +33,10 @@
   "address": "Address",
   "newAddress": "New Address",
   "saveAddress": "Save Address",
-  "insertNewAddress": "insert new address here"
+  "insertNewAddress": "insert new address here",
+  "location": "Location",
+  "camera": "Camera",
+  "gallery": "Gallery",
+  "insertMedicineName": "insert medicine name here",
+  "upload": "Upload"
 }

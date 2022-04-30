@@ -6,6 +6,7 @@ import ResetPassword from '../components/screen/ResetPassword';
 import ResetPasswordConfirmation from '../components/screen/ResetPasswordConfirmation';
 import SignupScreen from '../components/screen/SignupScreen';
 import SplashScreen from '../components/screen/SplashScreen';
+import UploadPrescription from '../components/screen/UploadPrescription';
 import { AppTab } from './router/TabNavigator';
 
 export const ROUTER_NAME = {
@@ -37,6 +38,10 @@ export const ROUTER_NAME = {
     name: 'profile',
     component: ProfileScreen,
   },
+  UPLOAD_PRESCRIPTION: {
+    name: 'uploadPrescription',
+    component: UploadPrescription,
+  },
   EDIT_ADDRESS: {
     name: 'editAddress',
     component: EditAddressScreen,
@@ -48,6 +53,6 @@ export const ROUTER_NAME = {
 };
 export const APP_TAB = {
   HOME: { ...ROUTER_NAME.HOME, name: 'Home_Tab' },
-  OFFER: { ...ROUTER_NAME.HOME, name: 'Offer_Tab' },
+  OFFER: { ...ROUTER_NAME.UPLOAD_PRESCRIPTION, name: 'Offer_Tab' },
   PROFILE: { ...ROUTER_NAME.PROFILE, name: 'Profile_Tab' },
 };
