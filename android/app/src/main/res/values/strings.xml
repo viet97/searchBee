@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SearchBee</string>
+    <string moduleConfig="true" name="CodePushDeploymentKey">mBzjuY04uU-X5_t5XjFjPLMD94iL_qHuMDSl8</string>
 </resources>

@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "postinstall": "patch-package",
     "env:stag": "node scripts/set-env.js stag",
-    "env:prod": "node scripts/set-env.js prod"
+    "env:prod": "node scripts/set-env.js prod",
+    "codepush-all": "appcenter codepush release-react -a quocvietdang97-gmail.com/SearchBEE-Customer-iOS -d Staging && appcenter codepush release-react -a quocvietdang97-gmail.com/SearchBEE-Customer-Android -d Staging"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.17.3",
@@ -28,6 +29,7 @@
     "patch-package": "^6.4.7",
     "react": "17.0.2",
     "react-native": "0.68.1",
+    "react-native-code-push": "^7.0.4",
     "react-native-device-info": "^8.7.0",
     "react-native-exit-app": "^1.1.0",
     "react-native-fast-image": "^8.5.11",

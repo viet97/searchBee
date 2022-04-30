@@ -11,7 +11,9 @@ import OrientationModule from '../modules/OrientationModule';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import Colors from '../../assets/Colors';
 import AppNavigator from '../navigation/AppNavigation';
-
+import { IS_ANDROID } from '../utils/DeviceUtil';
+import codePush from 'react-native-code-push'
+const { useCodepush, ANDROID_DEPLOYMENT_KEY, IOS_DEPLOYMENT_KEY } = require("../config/env.js")
 const { store } = ConfigStore();
 LogBox.ignoreAllLogs();
 class AppContainer extends React.Component {
@@ -73,13 +75,12 @@ class AppContainer extends React.Component {
 }
 
 let MyAppContainer = AppContainer;
-// if (Config.useCodePush) {
-//   const AppInfoManager = require('../AppInfoManager').default;
-//   let codePushOptions = {
-//     checkFrequency: codePush.CheckFrequency.ON_APP_RESUME,
-//     deploymentKey: AppInfoManager.getInstance().getDeploymentKey(),
-//   };
-//   MyAppContainer = codePush(codePushOptions)(AppContainer);
-// }
+if (useCodepush) {
+  let codePushOptions = {
+    checkFrequency: codePush.CheckFrequency.MANUAL,
+    deploymentKey: IS_ANDROID ? ANDROID_DEPLOYMENT_KEY : IOS_DEPLOYMENT_KEY,
+  };
+  MyAppContainer = codePush(codePushOptions)(AppContainer);
+}
 
 export default MyAppContainer;
