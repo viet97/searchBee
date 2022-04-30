@@ -50,22 +50,27 @@ export default class InputField extends BaseCommon {
       bold,
       Icon,
       font,
+      disabled,
       ...otherProps
     } = this.props;
     const { str } = this.state;
     const fontFamily = font || FontKey.regular
     return (
-      <View style={[styles.container, {
-        paddingLeft: Icon ? 20 : 0
-      }, containerStyle]}>
+      <View
+        style={[styles.container, {
+          paddingLeft: Icon ? 20 : 0,
+          backgroundColor: disabled ? Colors.pink_swan : Colors.white
+        }, containerStyle]}>
         {Icon ? <Icon width={24} height={24} /> : null}
         <TextInput
+          editable={!disabled}
           ref={this.inputRef}
           onBlur={this.onBlur}
           onFocus={this.onFocus}
           style={[styles.staticStyle, {
             paddingLeft: 10,
-            fontFamily
+            fontFamily,
+            color: disabled ? Colors.white : Colors.prussian_blue
           }, style]}
           onChangeText={this.onChangeText}
           underlineColorAndroid="transparent"

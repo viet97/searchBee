@@ -30,5 +30,8 @@
   "categories": "Categories",
   "next": "Next",
   "editName": "Edit Name",
-  "address": "Address"
+  "address": "Address",
+  "newAddress": "New Address",
+  "saveAddress": "Save Address",
+  "insertNewAddress": "insert new address here"
 }

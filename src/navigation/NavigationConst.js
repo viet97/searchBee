@@ -1,3 +1,4 @@
+import EditAddressScreen from '../components/screen/EditAddressScreen';
 import HomeScreen from '../components/screen/HomeScreen';
 import LoginScreen from '../components/screen/LoginScreen';
 import ProfileScreen from '../components/screen/ProfileScreen';
@@ -35,6 +36,10 @@ export const ROUTER_NAME = {
   PROFILE: {
     name: 'profile',
     component: ProfileScreen,
+  },
+  EDIT_ADDRESS: {
+    name: 'editAddress',
+    component: EditAddressScreen,
   },
   APP_TAB: {
     name: 'tab',
