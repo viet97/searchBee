@@ -15,6 +15,7 @@ import Header from '../../element/Header';
 import { insets } from '../../../utils/DeviceUtil';
 import NavigationService from '../../../navigation/NavigationService';
 import InputField from '../../common/InputField';
+import KeyboardScrollView from '../../element/KeyboardScrollView';
 
 class UploadPrescription extends BaseScreen {
   constructor(props) {
@@ -116,12 +117,14 @@ class UploadPrescription extends BaseScreen {
     return (
       <View style={styles.container}>
         {this.renderUnderLogo()}
-        <View
-          style={styles.headerContainer}>
-          {this.renderHeader()}
-          {this.renderUploadPrescription()}
-        </View>
-        {this.renderOptions()}
+        <KeyboardScrollView>
+          <View
+            style={styles.headerContainer}>
+            {this.renderUploadPrescription()}
+          </View>
+          {this.renderOptions()}
+        </KeyboardScrollView>
+        {this.renderHeader()}
       </View>
     );
   }
@@ -173,7 +176,7 @@ const styles = StyleSheet.create({
   },
   uploadPrescription: {
     flex: 1,
-    marginTop: 30
+    marginTop: 70 + insets.top
   },
   optionContainer: {
     marginHorizontal: 30,
@@ -190,7 +193,9 @@ const styles = StyleSheet.create({
   headerContentContainer: {
     marginTop: insets.top,
     flexDirection: 'row',
-    alignItems: "center"
+    alignItems: "center",
+    position: 'absolute',
+    left: 30
   },
   headerContainer: {
     backgroundColor: Colors.prussian_blue,
