@@ -15,6 +15,8 @@ import { translation } from '../../../translation';
 import { FontKey } from '../../../../assets/fonts/FontKey';
 import InputField from '../../common/InputField';
 import SBButton from '../../common/SBButton';
+import NavigationService from '../../../navigation/NavigationService';
+import { ROUTER_NAME } from '../../../navigation/NavigationConst';
 
 const dumpData = [
   "Homeopathy",
@@ -98,6 +100,7 @@ class HomeScreen extends BaseScreen {
       <View
         style={styles.broadcastRow}>
         <SBButton
+          onPress={() => NavigationService.getInstance().navigate({ routerName: ROUTER_NAME.MAP.name })}
           style={styles.broadcastButton}>
           <CustomText
             size={11}

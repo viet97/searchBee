@@ -13,7 +13,12 @@ import Colors from '../../assets/Colors';
 import AppNavigator from '../navigation/AppNavigation';
 import { IS_ANDROID } from '../utils/DeviceUtil';
 import codePush from 'react-native-code-push'
+import { enableLatestRenderer } from 'react-native-maps';
+
 const { useCodepush, ANDROID_DEPLOYMENT_KEY, IOS_DEPLOYMENT_KEY } = require("../config/env.js")
+
+enableLatestRenderer();
+
 const { store } = ConfigStore();
 LogBox.ignoreAllLogs();
 class AppContainer extends React.Component {

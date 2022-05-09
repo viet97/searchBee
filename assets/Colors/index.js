@@ -12,5 +12,6 @@ export default {
     mainColor: "#0094CB",
     prussian_blue: "#007CAA",
     pink_swan: "#B4B4B4",
-    placebo: "#E6E6E6"
+    placebo: "#E6E6E6",
+    mercury: "#E7E7E7"
 }

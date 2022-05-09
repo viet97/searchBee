@@ -7,6 +7,7 @@ import ResetPasswordConfirmation from '../components/screen/ResetPasswordConfirm
 import SignupScreen from '../components/screen/SignupScreen';
 import SplashScreen from '../components/screen/SplashScreen';
 import UploadPrescription from '../components/screen/UploadPrescription';
+import MapScreen from '../components/screen/MapScreen';
 import { AppTab } from './router/TabNavigator';
 
 export const ROUTER_NAME = {
@@ -45,6 +46,10 @@ export const ROUTER_NAME = {
   EDIT_ADDRESS: {
     name: 'editAddress',
     component: EditAddressScreen,
+  },
+  MAP: {
+    name: 'map',
+    component: MapScreen,
   },
   APP_TAB: {
     name: 'tab',

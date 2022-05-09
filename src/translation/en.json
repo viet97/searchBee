@@ -38,5 +38,13 @@
   "camera": "Camera",
   "gallery": "Gallery",
   "insertMedicineName": "insert medicine name here",
-  "upload": "Upload"
+  "upload": "Upload",
+  "searchCity": "Search City",
+  "insertCityName": "insert city name",
+  "radius": "Radius",
+  "validTo": "Valid To",
+  "allPharmaciesClosed": "All Pharmacies Are Closed",
+  "allPharmaciesClosedDes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Congue eget mauris diam vulputate aliquet. Nulla et i",
+  "backToMenu": "Back to Menu",
+  "broadcastAgain": "Broadcast Again"
 }
